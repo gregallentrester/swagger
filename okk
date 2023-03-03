@@ -1,0 +1,9 @@
+#!/bin/bash -p
+
+# kbyport 8080
+
+any=$(ps aux | grep  "java -jar target" | grep -v grep)
+
+mvn clean install -DskipTests -B
+
+java -jar target/swagger.jar
